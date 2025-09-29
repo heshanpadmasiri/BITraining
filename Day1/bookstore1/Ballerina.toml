@@ -1,0 +1,13 @@
+[package]
+org = "heshanp"
+name = "bookstore1"
+version = "0.1.0"
+title = "bookstore1"
+
+[build-options]
+sticky = true
+
+[[platform.java17.dependency]]
+groupId = "org.postgresql"
+artifactId = "postgresql"
+version = "42.2.20"
