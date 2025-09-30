@@ -1,0 +1,35 @@
+/*
+### Try Service: '/' (http://localhost:9090)
+
+*/
+/*
+#### PUT /book
+
+*/
+PUT http://localhost:9090/book
+Content-Type: application/json
+
+{
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "edition": 1,
+    "price": 10.99
+}
+
+HTTP/1.1 200  - OK
+content-type: application/json
+connection: close
+server: ballerina
+date: Tue, 30 Sep 2025 07:24:48 +0530
+content-encoding: gzip
+content-length: 60
+###
+GET http://localhost:9090/book/F.%20Scott%20Fitzgerald/The%20Great%20Gatsby
+
+HTTP/1.1 200  - OK
+content-type: application/json
+connection: close
+server: ballerina
+date: Tue, 30 Sep 2025 07:24:50 +0530
+content-encoding: gzip
+content-length: 169

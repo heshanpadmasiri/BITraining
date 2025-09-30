@@ -20,8 +20,6 @@ service / on httpDefaultListener {
 
     resource function get book/[string author]/[string title]() returns error|BookData[] {
         do {
-            // Ballerina automatically URL-decodes path parameters
-            // So spaces encoded as %20 will be automatically converted to spaces
             sql:ParameterizedQuery query = `SELECT * FROM books WHERE author = ${author} AND title = ${title}`;
 
             stream<BookData, sql:Error?> bookStream = postgresqlClient->query(query);
