@@ -1,0 +1,8 @@
+[package]
+org = "heshanp"
+name = "observability_demo"
+version = "0.1.0"
+title = "observability-demo"
+
+[build-options]
+sticky = true
