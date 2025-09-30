@@ -284,12 +284,39 @@ dependencies = [
 ]
 
 [[package]]
+org = "ballerinai"
+name = "observe"
+version = "0.0.0"
+dependencies = [
+	{org = "ballerina", name = "jballerina.java"},
+	{org = "ballerina", name = "observe"}
+]
+modules = [
+	{org = "ballerinai", packageName = "observe", moduleName = "observe"}
+]
+
+[[package]]
+org = "ballerinax"
+name = "jaeger"
+version = "1.0.0"
+dependencies = [
+	{org = "ballerina", name = "io"},
+	{org = "ballerina", name = "jballerina.java"},
+	{org = "ballerina", name = "observe"}
+]
+modules = [
+	{org = "ballerinax", packageName = "jaeger", moduleName = "jaeger"}
+]
+
+[[package]]
 org = "heshanp"
 name = "observability_demo"
 version = "0.1.0"
 dependencies = [
 	{org = "ballerina", name = "http"},
-	{org = "ballerina", name = "log"}
+	{org = "ballerina", name = "log"},
+	{org = "ballerinai", name = "observe"},
+	{org = "ballerinax", name = "jaeger"}
 ]
 modules = [
 	{org = "heshanp", packageName = "observability_demo", moduleName = "observability_demo"}
