@@ -7,14 +7,16 @@ service /weather on httpDefaultListener {
 
     resource function get temperature/[int lat]/[int long]() returns error|TemperatureResponse {
         do {
-            log:printInfo("test");
+            log:printInfo("temperature started", lattitude = lat, longitude = long);
             decimal temperature = 30;
+            log:printDebug("temperature calculated", temperature = temperature);
             TemperatureResponse result = {
                 lattitude: lat,
                 longitude: long,
                 temperature: 30,
                 unit: "Celsius"
             };
+            log:printDebug("result", result = result);
             return result;
         } on fail error err {
             // handle error
