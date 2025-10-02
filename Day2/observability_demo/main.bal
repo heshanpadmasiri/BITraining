@@ -1,6 +1,5 @@
 import ballerina/http;
 import ballerina/log;
-import ballerinax/jaeger as _;
 
 listener http:Listener httpDefaultListener = http:getDefaultListener();
 
@@ -8,17 +7,14 @@ service /weather on httpDefaultListener {
 
     resource function get temperature/[int lat]/[int long]() returns error|TemperatureResponse {
         do {
-            log:printInfo(`temperature lookup started`, lattitude = lat, longitude = long);
+            log:printInfo("test");
             decimal temperature = 30;
-            log:printDebug(`temparature calculated`, temperature = temperature);
             TemperatureResponse result = {
                 lattitude: lat,
                 longitude: long,
                 temperature: 30,
                 unit: "Celsius"
             };
-            log:printDebug(`result`, result = result);
-            log:printInfo(`temperature lookup done`, lattitude = lat, longitude = long, temperature = temperature);
             return result;
         } on fail error err {
             // handle error
