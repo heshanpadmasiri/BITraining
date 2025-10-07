@@ -1,5 +1,6 @@
 import ballerina/http;
 import ballerina/log;
+import ballerinax/jaeger as _;
 
 listener http:Listener httpDefaultListener = http:getDefaultListener();
 
